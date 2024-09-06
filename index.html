@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 400px;
+            margin: 0 auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+        }
+        input[type="text"], input[type="email"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0 20px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .clear-btn {
+            background-color: #dc3545;
+        }
+        .clear-btn:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Enter Student Details</h1>
+    
+    <form id="studentForm">
+        <label for="studentID">Student ID</label>
+        <input type="number" id="studentID" name="studentID" placeholder="Enter student ID" required>
+        
+        <label for="studentName">Student Name</label>
+        <input type="text" id="studentName" name="studentName" placeholder="Enter student name" required>
+        
+        <label for="studentAge">Age</label>
+        <input type="number" id="studentAge" name="studentAge" placeholder="Enter student age" required>
+        
+        <label for="studentCourse">Course</label>
+        <input type="text" id="studentCourse" name="studentCourse" placeholder="Enter student course" required>
+        
+        <label for="studentEmail">Email</label>
+        <input type="email" id="studentEmail" name="studentEmail" placeholder="Enter student email" required>
+        
+        <button type="submit">Submit</button>
+        <button type="button" class="clear-btn" onclick="clearForm()">Clear</button>
+    </form>
+
+    <script>
+        // Handle form submission
+        document.getElementById('studentForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            let studentID = document.getElementById('studentID').value;
+            let studentName = document.getElementById('studentName').value;
+            let studentAge = document.getElementById('studentAge').value;
+            let studentCourse = document.getElementById('studentCourse').value;
+            let studentEmail = document.getElementById('studentEmail').value;
+            
+            alert(`Student Details Submitted:\n\nID: ${studentID}\nName: ${studentName}\nAge: ${studentAge}\nCourse: ${studentCourse}\nEmail: ${studentEmail}`);
+        });
+
+        // Function to clear the form fields
+        function clearForm() {
+            document.getElementById('studentForm').reset();
+        }
+    </script>
+
+</body>
+</html>
